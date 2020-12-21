@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument('--headless')
 options.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片
-downloadname = r'G:\漫画2'
+downloadname = r'G:\漫画'
 url_base = input('\n-----------------------请在下方输入起始链接-----------------------\n')
 url = str(url_base)
 headers = {'Referer': url,
@@ -23,7 +23,7 @@ def get_link_url(url):
     page = BeautifulSoup(response.text, "lxml")
     total_html = page.find(name='ol', attrs={"id": "mh-chapter-list-ol-0"})
     # 以下为避免崩溃后重头下载的处理方案
-    # #设定一个列表组，将所有元素通过for in 存入 b[]内，之后通过调用b列表内指定元素 达到下载指定章节的效果 b[起始页的前一页：留空为最后一页]
+    # #设定一个列表组，将所有元素通过for in 存入 b[]内，之后通过调用b列表内指定元素 达到下载指定章节的效果 b[起始页的前一页：留空为最后一页] 例如 b[3:] 意思是从第四章开始下载到结束
     b = []
     for i in reversed(total_html.find_all('li')):
         b.append(i)
