@@ -9,7 +9,9 @@ https://www.google.cn/chrome/
 
 3.下载安装chromedirver
 http://npm.taobao.org/mirrors/chromedriver/
+
 PS：需要下载浏览器对应版本的chromedriver，解压后放到chrome.exe所在目录
+
 
 4.在系统高级设置path中添加chromedriver位置
 系统属性——高级系统设置——环境变量——“系统变量”-“Path”——编辑——新建（在此处将chromedriver位置加入进去）
